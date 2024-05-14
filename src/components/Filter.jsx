@@ -56,7 +56,7 @@ function Filter() {
   return (
     <div>
       <div className="bg-[#181818] lg:h-[95vh] lg:mt-7 lg:ms-10 rounded-l-xl">
-        <div className="text-center font-poppins font-semibold mx-5 pt-4 lg:pt-7">
+        <div className="text-center font-poppins font-semibold   mx-5 pt-4 lg:pt-7">
           <h2 className="text-3xl mb-5">Filters</h2>
           <div className="flex justify-between">
             <h5>Filters Applied</h5>
@@ -64,7 +64,7 @@ function Filter() {
               Clear All
             </button>
           </div>
-          <div className="bg-[#202020] mt-1  rounded-lg w-full h-16 font-normal text-sm pt-0.5 text-left overflow-y-scroll no-scrollbar::-webkit-scrollbar no-scrollbar">
+          <div className="bg-[#202020] mt-1  rounded-lg w-full h-16 font-normal text-xs md:text-sm lg:text-base pt-0.5 text-left overflow-y-scroll no-scrollbar::-webkit-scrollbar no-scrollbar">
             {filterApplied?.map((Applied) => (
               <button
                 key={Applied.name}
@@ -82,25 +82,25 @@ function Filter() {
             ))}
           </div>
         </div>
-        <div className="mt-3 bg-[#202020]  font-poppins font-semibold rounded-lg mx-5">
+        <div className="mt-3 bg-[#202020]  font-poppins font-semibold md:text-sm lg:text-base rounded-lg mx-5">
           <h3 className="pt-4 ms-5">Stock</h3>
           <div className="bg-[#313131] mx-7 rounded-md mt-2 px-4 py-0.5">
             <input
-              className="bg-[url('src/assets/Filters/search.svg')] border-none w-full bg-right bg-no-repeat placeholder:text-sm text-sm bg-[#313131] placeholder:text-[#737373] focus:outline-none"
+              className="bg-[url('src/assets/Filters/search.svg')] border-none w-full bg-right bg-no-repeat placeholder:text-sm md:text-sm lg:text-base bg-[#313131] placeholder:text-[#737373] focus:outline-none"
               type="text"
               placeholder="$ TICKER"
             />
           </div>
           <div className="flex items-center">
             <img
-              className="ms-8 mt-4 scale-110"
+              className=" ms-3 md:ms-4 lg:ms-8 mt-4 scale-110"
               src="src/assets/Filters/Vector.svg"
               alt=""
             />
             <h3 className="pt-4 ms-1">Industry</h3>
           </div>
-          <div className="flex justify-center font-normal text-sm">
-            <div className="basis-[54%] border-l ms-3 mt-2 pt-2 ">
+          <div className="flex justify-center font-normal text-[10px] md:text-xs lg:text-sm">
+            <div className="w-fit border-l ms-3 lg:ms-6 mt-2 pt-2 pe-4 lg:pe-3 ">
               {industry1?.map((industry) => (
                 <button
                   onClick={() => {
@@ -123,11 +123,13 @@ function Filter() {
                     src={industry.src}
                     alt={industry.name}
                   />
-                  <h5 className="group-hover:text-black">{industry.name}</h5>
+                  <h5 className="group-hover:text-black text-nowrap">
+                    {industry.name}
+                  </h5>
                 </button>
               ))}
             </div>
-            <div className="basis-[37%] h-fit border-l mt-2 pt-2 ">
+            <div className="w-fit h-fit border-l mt-2 pt-2 me-5">
               {industry2?.map((industry) => (
                 <button
                   onClick={() => {

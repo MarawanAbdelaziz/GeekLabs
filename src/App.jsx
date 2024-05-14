@@ -4,21 +4,126 @@ import Filter from "./components/Filter";
 
 // eslint-disable-next-line no-unused-vars
 const array = [
-  { id: 1, title: "AMZN", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 2, title: "TSLA", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 3, title: "ABQQ", price: 200, percentage: 0.25, risk: "High Risk" },
-  { id: 4, title: "MSFT", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 5, title: "PYPL", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 6, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 7, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 8, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 9, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
-  { id: 10, title: "NFLX", price: 200, percentage: 0.25, risk: "Low Risk" },
+  {
+    id: 1,
+    title: "AMZN",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 2,
+    title: "TSLA",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 3,
+    title: "ABQQ",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "High Risk",
+  },
+  {
+    id: 4,
+    title: "MSFT",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 5,
+    title: "PYPL",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 6,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 7,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 8,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 9,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "green",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
+  {
+    id: 10,
+    title: "NFLX",
+    price: 200,
+    percentage: 0.25,
+    color: "red",
+    risk: "Low Risk",
+  },
 ];
 
 function App() {
@@ -29,7 +134,6 @@ function App() {
     <section className=" grid grid-cols-4 font-poppins">
       <div className=" col-span-4 lg:col-span-3 bg-[#202020] h-screen">
         <SideBar />
-
         <div className="ms-20 lg:ms-auto sm:w-[90%] flex">
           <div className="flex w-full justify-between ">
             <div className="flex">
@@ -65,7 +169,7 @@ function App() {
           </div>
         </div>
 
-        <div className="ms-[105px] lg:ms-auto  h-[70vh] sm:h-[80vh] lg:h-[84vh] sm:w-[86.5%] mt-12 overflow-y-scroll ">
+        <div className="ms-[105px] lg:ms-auto  h-[70vh] sm:h-[80vh] lg:h-[84vh] sm:w-[86.5%] mt-12 overflow-y-scroll">
           {array?.map((item) => (
             <div key={item.id} className="bg-[#181818] rounded-md me-3 mb-4">
               <button
@@ -103,16 +207,28 @@ function App() {
                     src="src/assets/percentage.svg"
                     alt=""
                   />
-                  <p>-{item.percentage}%</p>
+                  {item.color == "red" ? (
+                    <p className="text-[#D94111]">-{item.percentage}%</p>
+                  ) : (
+                    <p className="text-[#118F4B]">-{item.percentage}%</p>
+                  )}
                 </div>
                 <div className="bg-[#414040] w-0.5 h-8 lg:h-12"></div>
 
                 <div className="flex justify-center w-[20%]  items-center me-2 sm:me-5 lg:py-2 my-2 lg:my-3">
-                  <img
-                    className="me-2 sm:me-6 lg:me-8 w-[15px] sm:w-[20px] md:w-[25px] lg:w-[40px]"
-                    src="src/assets/risk.svg"
-                    alt=""
-                  />
+                  {item.risk == "High Risk" ? (
+                    <img
+                      className="me-2 sm:me-6 lg:me-8 w-[15px] sm:w-[20px] md:w-[25px] lg:w-[40px]"
+                      src="src/assets/HighRisk.svg"
+                      alt=""
+                    />
+                  ) : (
+                    <img
+                      className="me-2 sm:me-6 lg:me-8 w-[15px] sm:w-[20px] md:w-[25px] lg:w-[40px]"
+                      src="src/assets/risk.svg"
+                      alt=""
+                    />
+                  )}
                   <p>{item.risk}</p>
                 </div>
               </button>
