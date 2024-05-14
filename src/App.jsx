@@ -131,8 +131,8 @@ function App() {
   const [openFilter, setOpenFilter] = useState(false);
 
   return (
-    <section className=" grid grid-cols-4 font-poppins">
-      <div className=" col-span-4 lg:col-span-3 bg-[#202020] h-screen">
+    <section className=" flex font-poppins">
+      <div className=" basis-[100%] lg:basis-[70%] min-[1600px]:basis-[73%] bg-[#202020] h-screen">
         <SideBar />
         <div className="ms-20 lg:ms-auto sm:w-[90%] flex">
           <div className="flex w-full justify-between ">
@@ -169,7 +169,7 @@ function App() {
           </div>
         </div>
 
-        <div className="ms-[105px] lg:ms-auto  h-[70vh] sm:h-[80vh] lg:h-[84vh] sm:w-[86.5%] mt-12 overflow-y-scroll">
+        <div className="ms-[105px] lg:ms-auto  h-[70vh] sm:h-[79vh] min-[1600px]:h-[84vh]  sm:w-[86.5%] mt-12 overflow-y-scroll">
           {array?.map((item) => (
             <div key={item.id} className="bg-[#181818] rounded-md me-3 mb-4">
               <button
@@ -269,7 +269,7 @@ function App() {
       )}
 
       {openFilter && (
-        <div className="bg-[#181818]  left-1/2 transform -translate-x-1/2 rounded-xl lg:hidden absolute top-10 ">
+        <div className="bg-[#181818] overflow-y-scroll h-[90vh]  left-1/2 transform -translate-x-1/2 rounded-xl lg:hidden absolute top-10 ">
           <img
             onClick={() => setOpenFilter(false)}
             className="ms-auto h-fit mt-5 me-6 w-4 cursor-pointer"
@@ -282,7 +282,7 @@ function App() {
         </div>
       )}
 
-      <div className="bg-[#202020] col-span-1 h-screen hidden lg:block">
+      <div className="bg-[#202020] basis-[30%] min-[1600px]:basis-[27%] h-screen hidden lg:block">
         <Filter />
       </div>
     </section>

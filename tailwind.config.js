@@ -5,7 +5,6 @@ export default {
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
     },
-
     extend: {},
   },
   plugins: [require("@tailwindcss/forms")],

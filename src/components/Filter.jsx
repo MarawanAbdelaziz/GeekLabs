@@ -50,21 +50,23 @@ const industry2 = [
   },
 ];
 
+// const StrategyButton = [];
+
 function Filter() {
   const [filterApplied, setFilterApplied] = useState([]);
 
   return (
     <div>
-      <div className="bg-[#181818] lg:h-[95vh] lg:mt-7 lg:ms-10 rounded-l-xl">
-        <div className="text-center font-poppins font-semibold   mx-5 pt-4 lg:pt-7">
-          <h2 className="text-3xl mb-5">Filters</h2>
+      <div className="bg-[#181818] lg:h-[95vh] lg:mt-7 lg:ms-10 rounded-l-xl overflow-y-scroll no-scrollbar::-webkit-scrollbar">
+        <div className="text-center font-poppins font-semibold mx-5 pt-4 lg:pt-7">
+          <h2 className="text-3xl mb-2">Filters</h2>
           <div className="flex justify-between">
             <h5>Filters Applied</h5>
             <button onClick={() => setFilterApplied([])} className="me-3">
               Clear All
             </button>
           </div>
-          <div className="bg-[#202020] mt-1  rounded-lg w-full h-16 font-normal text-xs md:text-sm lg:text-base pt-0.5 text-left overflow-y-scroll no-scrollbar::-webkit-scrollbar no-scrollbar">
+          <div className="bg-[#202020] mt-1  rounded-lg w-full h-16 font-normal text-xs md:text-sm lg:text-base pt-0.5 text-left overflow-y-scroll  no-scrollbar">
             {filterApplied?.map((Applied) => (
               <button
                 key={Applied.name}
@@ -99,7 +101,8 @@ function Filter() {
             />
             <h3 className="pt-4 ms-1">Industry</h3>
           </div>
-          <div className="flex justify-center font-normal text-[10px] md:text-xs lg:text-sm">
+
+          <div className="flex lg:block  min-[1400px]:flex justify-center font-normal text-[10px] md:text-xs  min-[1600px]:text-sm">
             <div className="w-fit border-l ms-3 lg:ms-6 mt-2 pt-2 pe-4 lg:pe-3 ">
               {industry1?.map((industry) => (
                 <button
@@ -129,7 +132,7 @@ function Filter() {
                 </button>
               ))}
             </div>
-            <div className="w-fit h-fit border-l mt-2 pt-2 me-5">
+            <div className="w-fit h-fit border-l mt-2 pt-2 me-5  ms-6 min-[1400px]:ms-0">
               {industry2?.map((industry) => (
                 <button
                   onClick={() => {
@@ -158,7 +161,7 @@ function Filter() {
             </div>
           </div>
 
-          <div className="flex mt-5 font-normal">
+          <div className="flex lg:block min-[1400px]:flex mt-5 font-normal">
             <div className="basis-2/4 ">
               <div className="flex items-center mb-4">
                 <img
@@ -256,7 +259,47 @@ function Filter() {
             </div>
           </div>
 
-          <div className="flex mt-5 font-normal"></div>
+          <div className="flex mt-5 font-normal pb-3">
+            <div>
+              <h3 className="pt-4 ms-5 text-lg font-semibold text-center mb-3">
+                Strategy
+              </h3>
+              <div className=" ms-10 py-2 px-3 overflow-y-scroll h-20  no-scrollbar  ">
+                <button className="block mb-1.5 text-white/[0.5] ">
+                  Big Option Buys
+                </button>
+                <button className=" block bg-[#53ACFF] px-1 rounded-md mb-1.5">
+                  Merger Arbitage
+                </button>
+                <button className="block text-white/[0.5] ">
+                  Short Reports
+                </button>
+              </div>
+            </div>
+            <div className="lg:ms-10 ms-5 me-5">
+              <h3 className="pt-4 ms-5 text-lg font-semibold text-center mb-3">
+                Asset
+              </h3>
+              <div className=" ms-10 p-3 overflow-y-scroll h-20  no-scrollbar ">
+                <button className="block mb-1.5 text-white/[0.5]">
+                  Stocks
+                </button>
+                <button className=" block bg-[#53ACFF] px-1 rounded-md mb-1.5">
+                  Option
+                </button>
+                <button className="block text-white/[0.5] ">Futures</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex lg:block mt-2 w-full justify-center items-center pb-5">
+          <button className=" lg:hidden lg:ms-24 2xl:ms-32 min-[1600px]:ms-40 mt-3  rounded-lg py-1 px-2 me-8 border bg-transparent">
+            Save Filter
+          </button>
+
+          <button className="lg:ms-24 2xl:ms-32 min-[1600px]:ms-40 mt-3 lg:text-3xl rounded-lg py-1 px-5 lg:px-10 bg-[#53ACFF]">
+            Apply
+          </button>
         </div>
       </div>
     </div>
