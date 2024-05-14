@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: white;
+}
+
+.group:hover .icon-color {
+  filter: brightness(0) saturate(100%) invert(79%) sepia(56%) saturate(6113%) hue-rotate(189deg) brightness(107%) contrast(104%);
+}
+
+.group:hover .icon-color-Filters {
+  filter: brightness(0) saturate(100%);
+}
+
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.radio-custom {
+  position: relative;
+}
+
+.radio-custom:checked {
+  background-color: #494949;
+  background-image: none;
+}
+
+.radio-custom:checked::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-color: #53ACFF;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-custom::before {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-color: #202020;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.radio-custom:focus {
+  outline: none;
+  box-shadow: none;
+  background-color: none;
+  background-image: none;
+  color: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 5px;
+  min-height: 10px;
+
+}
+
